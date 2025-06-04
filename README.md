@@ -28,6 +28,7 @@ Core features:
 - [Website](#website)
 
 ## Quick start
+hello this is test
 
 Click the 'Deploy' button above to spin up this template directly into Vercel hosting. It will first prompt you save this template into your own Github repo so that you own the code and can make any changes you want to it.
 
