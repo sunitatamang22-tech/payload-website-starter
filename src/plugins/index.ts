@@ -10,6 +10,7 @@ import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import { FixedToolbarFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { searchFields } from '@/search/fieldOverrides'
 import { beforeSyncWithSearch } from '@/search/beforeSync'
+import { payloadTotp } from 'payload-totp'
 
 import { Page, Post } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
@@ -91,4 +92,10 @@ export const plugins: Plugin[] = [
     },
   }),
   payloadCloudPlugin(),
+  payloadTotp({
+    collection: 'users',
+    // forceSetup: true, // Uncomment to require all users to set up TOTP
+    // disableAccessWrapper: false, // Optional: customize as needed
+    // totp: { digits: 6, period: 30, algorithm: 'SHA1', issuer: 'PayloadCMS' }, // Optional: customize TOTP
+  }),
 ]
